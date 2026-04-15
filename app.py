@@ -13,7 +13,7 @@ st.set_page_config(
 # ── Load model ───────────────────────────────────────────────────────────────
 @st.cache_resource
 def load_model():
-    return joblib.load('linear_regression_model.pkl')
+    return joblib.load('model.pkl')
 
 model = load_model()
 
@@ -157,7 +157,7 @@ if st.button("🔍 Predict Years to Bankruptcy", use_container_width=True, type=
 # ── Footer ───────────────────────────────────────────────────────────────────
 st.divider()
 st.caption(
-    "Model: Linear Regression pipeline (StandardScaler + Ridge) · "
+    "Model: Regression pipeline (StandardScaler + Ridge) · "
     "Dataset: American Bankruptcy Prediction — NYSE/NASDAQ 1999–2018 · "
     "Metric: Years until bankruptcy filing (right-censored survival target)"
 )
